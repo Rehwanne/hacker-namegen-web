@@ -104,7 +104,7 @@ THE SOFTWARE.
 
 <?php
     function get_name() {
-        $prefix = array(
+        $fix = array(
             'l33t',
 	    '3l33t',
             'f1r3w4ll',
@@ -134,10 +134,7 @@ THE SOFTWARE.
             'blu3',
             'c001',
             'c01d',
-            'li9ht'
-        );
-
-        $suffix = array(
+            'li9ht',
             'h4xx0r',
             'sn34k3R',
             'f4k0r',
@@ -166,16 +163,16 @@ THE SOFTWARE.
             'bu11',
             'phr34k'
         );
-	$suffix = get_rand($suffix);
-	$prefix = get_rand($prefix);
+	$suffix = get_rand($fix);
+	$prefix = get_rand($fix);
 	if ($prefix != $suffix){
         echo $prefix . '-' . $suffix;
 	}else{
-	        echo get_rand($prefix) . '-' . get_rand($suffix);
+	        echo get_rand($fix) . '-' . get_rand($fix);
 	}    
 	}	  
 
-    function get_rand($input_array) {
-        return $input_array[rand(0, count($input_array) -1)];
+    function get_rand($fix) {
+        return $fix[rand(0, count($fix) -1)];
     }
 
