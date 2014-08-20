@@ -166,9 +166,14 @@ THE SOFTWARE.
             'bu11',
             'phr34k'
         );
-
-        echo get_rand($prefix) . '-' . get_rand($suffix);
-    }  
+	$suffix = get_rand($suffix);
+	$prefix = get_rand($prefix);
+	if ($prefix != $suffix){
+        echo $prefix . '-' . $suffix;
+	}else{
+	        echo get_rand($prefix) . '-' . get_rand($suffix);
+	}    
+	}	  
 
     function get_rand($input_array) {
         return $input_array[rand(0, count($input_array) -1)];
